@@ -49,6 +49,7 @@
 
   .side-bar {
     border: 1px solid purple;
-    width: 40%;
+    position: fixed;
+    right: 0;
   }
 }

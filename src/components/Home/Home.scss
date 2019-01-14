@@ -37,6 +37,9 @@
     }
 
     .comments {
+      h1 {
+        padding-left: 10px;
+      }
       i {
         padding: 10px;
       }
@@ -46,7 +49,7 @@
       }
       .comment-input {
         input {
-          width: 100%;
+          width: 97%;
           padding: 10px 10px;
           border: none;
         }

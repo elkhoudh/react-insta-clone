@@ -4,19 +4,30 @@ import PostImage from "./PostImage";
 import Comments from "./Comments";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { addLike } from "../../actions";
 
 const PostContainer = props => {
-  const { Insta } = props;
+  const { Insta, onLike } = props;
+
+  const onLikeClick = username => {
+    onLike(username);
+  };
   return (
     <>
-      {Insta.map((post, i) => (
-        <div key={i} className="post-container">
+      {Insta.data.map(post => (
+        <div key={post.username} className="post-container">
           <PostHeader
             thumbnailUrl={post.thumbnailUrl}
             username={post.username}
           />
           <PostImage imageUrl={post.imageUrl} />
-          <Comments comments={post.comments} />
+          <Comments
+            comments={post.comments}
+            onLikeClick={onLikeClick}
+            likes={post.likes}
+            username={post.username}
+            Insta={Insta}
+          />
         </div>
       ))}
     </>
@@ -24,8 +35,12 @@ const PostContainer = props => {
 };
 
 const mapStateToProps = state => ({
-  Insta: state.Insta.data
+  Insta: state.Insta
 });
+
+const mapActionsToProps = {
+  onLike: addLike
+};
 
 PostContainer.propTypes = {
   Insta: PropTypes.arrayOf(
@@ -45,4 +60,7 @@ PostContainer.propTypes = {
   )
 };
 
-export default connect(mapStateToProps)(PostContainer);
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(PostContainer);

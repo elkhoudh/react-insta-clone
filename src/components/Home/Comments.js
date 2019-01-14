@@ -5,10 +5,15 @@ const Comments = props => {
   return (
     <div className="comments">
       <div className="icons">
-        <i className="fas fa-heart" />
+        <i
+          onClick={() => props.onLikeClick(props.username)}
+          className="fas fa-heart"
+        />
         <i className="fas fa-comment" />
         <i className="fas fa-share" />
       </div>
+      <h1>{props.likes} Likes</h1>
+
       {props.comments.map((comment, i) => (
         <div key={i} className="comments-section">
           <h1>{comment.username}</h1>
@@ -30,6 +35,9 @@ Comments.propTypes = {
       username: PropTypes.string,
       text: PropTypes.string
     })
-  )
+  ),
+  onLikeClick: PropTypes.func,
+  postId: PropTypes.number
 };
+
 export default Comments;

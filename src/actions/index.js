@@ -4,3 +4,12 @@ export const addLike = username => {
     username
   };
 };
+
+export const addComment = (username, user, text) => {
+  return {
+    type: "ADD_COMMENT",
+    username,
+    user,
+    text
+  };
+};

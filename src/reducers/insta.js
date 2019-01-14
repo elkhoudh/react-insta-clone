@@ -16,6 +16,19 @@ const instaReducer = (state = initalState, action) => {
         ...state,
         newStat
       };
+
+    case "ADD_COMMENT":
+      const newComment = state.data.map(post => {
+        if (post.username === action.username) {
+          post.comments.push({ text: action.text, username: action.user });
+        }
+        return state;
+      });
+      return {
+        ...state,
+        newComment
+      };
+
     default:
       return state;
   }

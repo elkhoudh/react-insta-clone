@@ -4,13 +4,19 @@ import PostImage from "./PostImage";
 import Comments from "./Comments";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { addLike } from "../../actions";
+import { addLike, addComment } from "../../actions";
 
 const PostContainer = props => {
-  const { Insta, onLike } = props;
+  const { Insta, onLike, onComment } = props;
 
   const onLikeClick = username => {
     onLike(username);
+  };
+
+  const onCommentSubmit = (e, username, user, text) => {
+    e.preventDefault();
+    onComment(username, user, text);
+    document.querySelector("#comment").value = "";
   };
   return (
     <>
@@ -27,6 +33,7 @@ const PostContainer = props => {
             likes={post.likes}
             username={post.username}
             Insta={Insta}
+            onComment={onCommentSubmit}
           />
         </div>
       ))}
@@ -39,7 +46,8 @@ const mapStateToProps = state => ({
 });
 
 const mapActionsToProps = {
-  onLike: addLike
+  onLike: addLike,
+  onComment: addComment
 };
 
 PostContainer.propTypes = {

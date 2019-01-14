@@ -3,9 +3,48 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+
+  margin-top: 60px;
   .post-container {
-    border: 1px solid red;
-    width: 60%;
+    border: 1px solid gray;
+    margin-right: 40px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    .post-user {
+      display: flex;
+      padding: 10px 10px;
+      justify-content: baseline;
+      h1 {
+        padding: 10px 10px;
+      }
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+    }
+    .post-photo {
+      img {
+        width: 100%;
+      }
+    }
+
+    .comments {
+      i {
+        padding: 10px;
+      }
+      .comments-section {
+        display: flex;
+        padding: 10px;
+      }
+      .comment-input {
+        input {
+          width: 100%;
+          padding: 10px 10px;
+          border: none;
+        }
+      }
+    }
   }
 
   .side-bar {

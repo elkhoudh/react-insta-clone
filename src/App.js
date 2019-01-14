@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import NavBar from "./components/NavBar/NavBarContainer";
 import HomeContainer from "./components/Home/HomeContainer";
@@ -8,8 +7,6 @@ import "./App.scss";
 
 class App extends Component {
   render() {
-    const { Insta } = this.props;
-    console.log(Insta);
     return (
       <div className="App">
         <NavBar />
@@ -18,10 +15,6 @@ class App extends Component {
     );
   }
 }
-
-const mapStateToProps = state => ({
-  Insta: state.Insta.data
-});
 
 App.propTypes = {
   Insta: PropTypes.arrayOf(
@@ -41,4 +34,4 @@ App.propTypes = {
   )
 };
 
-export default connect(mapStateToProps)(App);
+export default App;

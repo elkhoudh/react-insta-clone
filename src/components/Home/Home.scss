@@ -1,0 +1,15 @@
+.home-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  .post-container {
+    border: 1px solid red;
+    width: 60%;
+  }
+
+  .side-bar {
+    border: 1px solid purple;
+    width: 40%;
+  }
+}

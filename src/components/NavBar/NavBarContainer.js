@@ -6,10 +6,12 @@ import "./NavBar.scss";
 
 const NavBarContainer = props => {
   return (
-    <div className="navbar-container">
-      <Logo />
-      <SearchBar />
-      <Icons />
+    <div className="container">
+      <div className="navbar-container">
+        <Logo />
+        <SearchBar />
+        <Icons />
+      </div>
     </div>
   );
 };

@@ -51,21 +51,19 @@ const mapActionsToProps = {
 };
 
 PostContainer.propTypes = {
-  Insta: PropTypes.arrayOf(
-    PropTypes.shape({
-      comments: PropTypes.arrayOf(
-        PropTypes.shape({
-          username: PropTypes.string,
-          text: PropTypes.string
-        })
-      ),
-      username: PropTypes.string,
-      timestamp: PropTypes.string,
-      thumbnailUrl: PropTypes.string,
-      likes: PropTypes.number,
-      imageUrl: PropTypes.string
-    })
-  )
+  Insta: PropTypes.shape({
+    comments: PropTypes.arrayOf(
+      PropTypes.shape({
+        username: PropTypes.string,
+        text: PropTypes.string
+      })
+    ),
+    username: PropTypes.string,
+    timestamp: PropTypes.string,
+    thumbnailUrl: PropTypes.string,
+    likes: PropTypes.number,
+    imageUrl: PropTypes.string
+  })
 };
 
 export default connect(

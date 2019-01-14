@@ -1,6 +1,6 @@
 import Data from "../dummy-data";
 
-const initalState = Data;
+const initalState = { data: Data };
 
 const instaReducer = (state = initalState, action) => {
   return state;

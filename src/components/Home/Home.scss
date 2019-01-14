@@ -46,6 +46,9 @@
       .comments-section {
         display: flex;
         padding: 10px;
+        h1 {
+          padding-right: 10px;
+        }
       }
       .comment-input {
         input {

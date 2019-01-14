@@ -4,8 +4,15 @@
   display: flex;
   justify-content: space-between;
 
-  margin-top: 60px;
+  margin-top: 130px;
+  .side-bar {
+    border: 1px solid purple;
+    position: fixed;
+    right: 180px;
+  }
   .post-container {
+    background-color: #fff;
+
     border: 1px solid gray;
     margin-right: 40px;
     margin-left: 20px;
@@ -45,11 +52,5 @@
         }
       }
     }
-  }
-
-  .side-bar {
-    border: 1px solid purple;
-    position: fixed;
-    right: 0;
   }
 }
